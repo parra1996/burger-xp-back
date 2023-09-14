@@ -1,7 +1,7 @@
-const { Usuario } = require("../models/index");
-const { Op } = require("sequelize");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const { Usuario } = require('../models/index');
+const { Op } = require('sequelize');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const UsuariosController = {};
 
