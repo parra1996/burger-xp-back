@@ -3,13 +3,33 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Pedidos', {
-      id: {
+        id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      hamburguesaID: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Hamburguesas',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+      },
+      usuarioID: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Usuarios',
+          key: 'id'
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'CASCADE'
+      },
+      comment: {
         type: Sequelize.STRING
       },
       createdAt: {

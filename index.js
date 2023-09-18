@@ -1,24 +1,24 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const cors = require("cors");
-const db = require("./db.js");
+const cors = require('cors');
+const db = require('./db.js');
 
 const PORT = process.env.PORT || 5000;
 
-const router = require("./router");
+const router = require('./router');
 
-let corsOptions = {
-  origin: "*",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+const corsOptions = {
+  origin: '*',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   preflightContinue: false,
   optionsSuccessStatus: 204,
 };
 
-//Middleware
+// Middleware
 app.use(express.json());
 app.use(cors(corsOptions));
 app.use(router);
 
-// db.then(() => {
+db.then(() => {
 app.listen(PORT, () => console.log(`Server on port ${PORT}`));
-// }).catch((err) => console.log(err.message));
+}).catch((err) => console.log(err.message));

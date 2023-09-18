@@ -12,6 +12,21 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
+      ingredients: {
+        type: Sequelize.STRING
+      },
+      preparation: {
+        type: Sequelize.TEXT
+      },
+      comments: {
+        type: Sequelize.STRING
+      },
+      price: {
+        type: Sequelize.INTEGER
+      },
+      image: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
