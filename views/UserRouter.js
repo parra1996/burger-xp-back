@@ -9,4 +9,6 @@ router.get('/', UsuariosController.traeUsuarios);
 
 router.post('/', UsuariosController.register);
 
+router.post('/login', UsuariosController.login);
+
 module.exports = router;

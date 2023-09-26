@@ -3,7 +3,11 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['standard', 'prettier'],
+  extends: [
+    'standard',
+    'plugin:prettier/recommended',
+    'plugin:react/recommended',
+  ],
   overrides: [
     {
       env: {
@@ -21,6 +25,8 @@ module.exports = {
   },
   rules: {
     quotes: ['error', 'single'],
+    'prettier/prettier': ['error', { endOfLine: 'auto' }],
+    "semi-style": ["error", "last"]
   },
   plugins: ['prettier'],
 };
