@@ -14,4 +14,20 @@ PedidoController.bringOrders =(req,res)=> {
    })
 }
 
+PedidoController.makeOrder = (req,res) => {
+    const { usuarioID, hamburguesaID, comment} = req.body
+    try {
+        Pedido.create({
+            usuarioID,
+            hamburguesaID,
+            comment
+        })
+        .then(order => {
+            res.send(order)
+        })
+    }catch(error){
+        res.send(error)
+    }
+}
+
 module.exports = PedidoController;

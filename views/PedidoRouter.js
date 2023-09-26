@@ -5,5 +5,8 @@ const PedidoController = require('../controllers/PedidoController');
 
 router.get('/', PedidoController.bringOrders);
 
+router.post('/makeOrder', PedidoController.makeOrder);
+
+
 
 module.exports = router;
