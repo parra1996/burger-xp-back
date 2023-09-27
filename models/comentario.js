@@ -12,11 +12,13 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
         this.belongsTo(models.Hamburguesas, {
         foreignKey: 'hamburguesaID'
-      });
+        });
+        this.belongsTo(models.Usuario, {
+        foreignKey: 'UsuarioID'
+        });
     }
   }
   Comentario.init({
-    userID: DataTypes.INTEGER,
     comment: DataTypes.STRING
   }, {
     sequelize,

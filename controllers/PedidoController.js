@@ -30,4 +30,19 @@ PedidoController.makeOrder = (req,res) => {
     }
 }
 
+PedidoController.bringOrderById = async (req,res)=> {
+    const id = req.params.id
+    try {
+        const consulta = `SELECT * FROM pedidos WHERE pedidos.usuarioID = ${id}`;
+
+        const resultado = await Pedido.sequelize.query(consulta,{
+            type: Pedido.sequelize.QueryTypes.SELECT
+        });
+        if(resultado) res.send(resultado);
+            
+    }catch(error){
+        res.send(error)
+    }
+}
+
 module.exports = PedidoController;

@@ -84,4 +84,52 @@ UsuariosController.login = (req, res) => {
     });
 };
 
+UsuariosController.bringUserByName = (req,res) => {
+  const name = req.params.name
+  try{
+    Usuario.findOne({
+      where: {
+        name : name
+      }
+    })
+    .then(data => {
+      if(data){
+        const {
+          name, surname,email, age,gender
+        } = data;
+        res.send({
+          name: name,
+          surname: surname,
+          email :email,
+          age : age, 
+          gender :gender
+        })
+      }
+      else res.send('This user is not in our database');
+    })
+  }catch(error){
+    res.send(error)
+  }
+}
+
+// UsuariosController.bringUserByName = async (req,res) => {
+//   const name = req.params.name
+//   try {
+
+//     const consulta = `SELECT *
+//       FROM usuarios 
+//       JOIN pedidos ON usuarios.id = pedidos.usuarioID
+//       JOIN hamburguesas ON pedidos.hamburguesaID = hamburguesas.id
+//       WHERE usuarios.name = '${name}'`;
+
+//     const resultado = await Usuario.sequelize.query(consulta,{
+//         type: Usuario.sequelize.QueryTypes.SELECT
+//     });
+//     if(resultado) res.send(resultado);
+          
+//   }catch(error){
+//     res.send(error)
+//   }
+// }
+
 module.exports = UsuariosController;
