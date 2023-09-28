@@ -25,6 +25,7 @@
     "timers-promises": "^1.0.1"
   },
   "devDependencies": {
+    "@types/node": "^20.7.1",
     "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-config-standard": "^17.1.0",
