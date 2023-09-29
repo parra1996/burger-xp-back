@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "1234",
-    "database": "burgerxp",
-    "host": "127.0.0.1",
+    "username": "umwhswk9cbv6w0ap",
+    "password": "ZTMHMo8AwTccAUbcN6B6",
+    "database": "bjtu5moskafer4olfdqe",
+    "host": "bjtu5moskafer4olfdqe-mysql.services.clever-cloud.com",
     "dialect": "mysql"
   },
   "test": {
@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": "1234",
-    "database": "burgerxp",
-    "host": "127.0.0.1",
+    "username": "umwhswk9cbv6w0ap",
+    "password": "ZTMHMo8AwTccAUbcN6B6",
+    "database": "bjtu5moskafer4olfdqe",
+    "host": "bjtu5moskafer4olfdqe-mysql.services.clever-cloud.com",
     "dialect": "mysql"
   }
 }
